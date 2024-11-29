@@ -8,18 +8,18 @@ export const registerBlood = async (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail', // Change this if using a different email service
         auth: {
-            user: 'ehtishamzahid039@gmail.com', // Your email
-            pass: 'fesc gkqz grdh tzmj', // Your email password or app password
+            user: process.env.email, // Your email
+            pass: process.env.pass,// Your email password or app password
         },
     });
 
     // Set up email options
     let mailOptions = {
-        from: 'ehtishamzahid039@gmail.com', // Sender address
-        to: 'ehtishamzahid039@gmail.com', // Recipient email
-        subject: 'New Blood Donation Registration',
+        from: 'shahadnanali6@gmail.com', // Sender address
+        to: 'shahadnanali6@gmail.com', // Recipient email
+        subject: 'Blood REquest',
         text: `
-        New blood donation registration:
+        Blood REquest:
         - Donar Name: ${fullName}
         - hospital: ${hospital}
         - Contact Number: ${contactNumber}
